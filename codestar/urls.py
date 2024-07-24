@@ -18,6 +18,7 @@ from django.contrib import admin
 from django.urls import path
 from home.views import home
 from about.views import about
+from bookings.views import bookings
 
 
 urlpatterns = [
