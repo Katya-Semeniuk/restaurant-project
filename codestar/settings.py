@@ -27,7 +27,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ.get("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = [ '8000-katyasemeni-restaurantp-i26zpxkenr1.ws.codeinstitute-ide.net',
 '.herokuapp.com']
@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'home',
     'about',
     'bookings',
+    'menu',
 ]
 
 MIDDLEWARE = [
@@ -93,7 +94,7 @@ DATABASES = {
 }
 
 CSRF_TRUSTED_ORIGINS = [
-    "https://*.codeanyapp.com",
+    "https://*.codeinstitute-ide.net",
     "https://*.herokuapp.com"
 ]
 

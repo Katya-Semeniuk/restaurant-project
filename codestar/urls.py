@@ -19,13 +19,15 @@ from django.urls import path
 from home.views import home
 from about.views import about
 from bookings.views import bookings
+from menu.views import menu
 
 
 urlpatterns = [
     path('', home, name='home'),
     path('about/', about, name='about'),
     path('admin/', admin.site.urls),
-    path('bookings/', bookings, name='bookings')
+    path('bookings/', bookings, name='bookings'),
+    path('menu/', menu, name='menu')
     
     
 ]
