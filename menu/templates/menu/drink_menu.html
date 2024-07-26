@@ -1,23 +1,68 @@
 {% extends "base.html" %}
+{% load static %}
 
 {% block content %}
 
-<!-- index.html content starts here -->
+
 <div class="container-fluid">
     <div class="row">
-
-        <!-- Blog Entries Column -->
-        <div class="col-12 mt-3 left">
-            <div class="row">
-                <div>Drink Menu</div>
+        <div class="col-12 mt-3 w-50 mx-auto">
+            <h2 class="heading text-center">Coctails</h2>
+            {% for drink in drink_list %}
+            {% if drink.drink_type == 2 and drink.available == 1 %}
+            <div class="d-block d-md-flex justify-content-between">
+                <div>
+                    <h3 class="light">{{ drink.drink_name}}</h3>
+                    <p class="text-muted">{{ drink.description}}</p>
+                </div>
+                
+                <p class="light">{{ drink.price}} <span class="light">€</span></p>
             </div>
-            <div class="row">
-
+             
+            {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12 mt-3 w-50 mx-auto">
+            <h2 class="heading text-center">Wines</h2>
+            {% for drink in drink_list %}
+            {% if drink.drink_type == 0 and drink.available == 1 %}
+            <div class="d-block d-md-flex justify-content-between">
+                <div>
+                    <h3 class="light">{{ drink.drink_name}}</h3>
+                    <p class="text-muted">{{ drink.description}}</p>
+                </div>
+                
+                <p class="light">{{ drink.price}} <span class="light">€</span></p>
             </div>
+             
+            {% endif %}
+            {% endfor %}
         </div>
     </div>
     
+    <div class="row">
+        <div class="col-12 mt-3 w-50 mx-auto mb-5">
+            <h2 class="heading text-center">Beers</h2>
+            {% for drink in drink_list %}
+            {% if drink.drink_type == 1 and drink.available == 1 %}
+            <div class="d-block d-md-flex justify-content-between">
+                <div>
+                    <h3 class="light">{{ drink.drink_name}}</h3>
+                    <p class="text-muted">{{ drink.description}}</p>
+                </div>
+                
+                <p class="light">{{ drink.price}} <span class="light">€</span></p>
+            </div>
+             
+            {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+    
+    
 </div>
 
-<!-- index.html content ends here -->
+
 {% endblock %}
