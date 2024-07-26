@@ -1,6 +1,9 @@
 {% load static %}
 
 {% url 'home' as home_url %}
+{% url 'about' as about_url %}
+{% url 'menu' as menu_url %}
+
 
 
 <!DOCTYPE html>
@@ -11,9 +14,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <!-- Google Fonts CSS -->
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Upright:wght@300;400;500;600;700&family=Open+Sans:wght@300..800&display=swap" rel="stylesheet">
 
     <!-- Font Awesome CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
@@ -30,16 +33,16 @@
 <body class="d-flex flex-column h-100 main-bg">
 
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-white">
+    <nav class="navbar navbar-expand-lg bg-dark">
         <div class="container-fluid">
-            <a class="navbar-brand" href="{% url 'home' %}"><span class="brand">REST<span
-                        class="thin">aurant</span></span></a>
+            <a class="navbar-brand" href="{% url 'home' %}"><span class="brand">REST</span><span
+                        class="thin">aurant</span></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
                 aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarText">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <ul class="navbar-nav ms-auto me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
                         <a class="nav-link {% if request.path == home_url %}active{% endif %}" aria-current="page"
                             href="{% url 'home'%}">Home</a>
@@ -49,10 +52,29 @@
                             href="{% url 'about'%}">About</a>
                     </li>
                     
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                          Menu
+                        </a>
+                        <ul class="dropdown-menu">
+                          <li><a class="dropdown-item " href="{% url 'food_menu' %}">Food</a></li>
+                          <li><hr class="dropdown-divider"></li>
+                          <li><a class="dropdown-item"  href="{% url 'drink_menu' %}">Drink</a></li>
+                        </ul>
+                      </li>
+                    
                 </ul>
-                <span class="navbar-text text-muted">
-                    adventures of a software developer
-                </span>
+                <ul class="d-flex">
+                    <li>
+                        <a class="btn btn-warning me-2 " href="#" role="button">Log in</a>
+                       
+                    </li>
+                    <li>
+                        <a class="btn btn-warning" href="#" role="button">Register</a>
+                       
+                    </li>
+                </ul>
+                
             </div>
         </div>
     </nav>

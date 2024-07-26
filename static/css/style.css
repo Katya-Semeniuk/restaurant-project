@@ -1,33 +1,47 @@
 body {
-    background-color: #F9FAFC;
+    font-family: "Open Sans", sans-serif;
+}
+
+ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
 }
 
 .brand {
-    font-family: Lato, sans-serif;
+    font-family: "Cormorant Upright", serif;
     font-size: 1.4rem;
     font-weight: 700;
-    color: #4A4A4F;
+    color: #ffc107;  
 }
 
-.red-o {
-    color: #E84610;
+
+.nav-link:hover {
+    color: #ffc107 !important;
+}
+
+
+.light {
+    color: #F5F4FA;
 }
 
 .thin {
     font-weight: 300;
 }
 
-.light-bg {
+/* .light-bg {
     background-color: #fff;
-}
+} */
 
 .dark-bg {
     background-color:#343a40;
+    
 }
 
 .main-bg {
     /* background-color: #F9FAFC; */
-    background-color: #F5F4FA;;
+    background-color: #F5F4FA;
+    /* background-color: #0C0B08; */
 
 }
 

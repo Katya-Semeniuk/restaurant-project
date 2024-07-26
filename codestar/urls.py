@@ -19,7 +19,7 @@ from django.urls import path, include
 
 from about.views import about
 from bookings.views import bookings
-from menu.views import menu
+
 
 
 
@@ -28,7 +28,7 @@ urlpatterns = [
     path('about/', about, name='about'),
     path('admin/', admin.site.urls),
     path('bookings/', bookings, name='bookings'),
-    path('menu/', menu, name='menu')
+    path("", include("menu.urls"), name="menu")
     
     
 ]
