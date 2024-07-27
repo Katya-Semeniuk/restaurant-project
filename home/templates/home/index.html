@@ -1,23 +1,44 @@
 {% extends "base.html" %}
-
+{% load static %}
 {% block content %}
 
-<!-- index.html content starts here -->
-<div class="container-fluid">
-    <div class="row">
-
-        <!-- Blog Entries Column -->
-        <div class="col-12 mt-3 left">
-            <div class="row">
-                <div>Hello home Page</div>
+<div class="container-fluid ">
+    <div class="row hero">
+        <div class="row">
+            <div class="col-12 ">
+                <h1 class="title">REST <span>aurant</span></h1>
             </div>
-            <div class="row">
-
-            </div>
+            
         </div>
     </div>
+    <div class="row pt-5 pb-5 align-items-center">
+        <div class="col">
+            <p class="text fs-3">Food, Drinks, entertainment in one</p>
+            <p class="text-white text-center fs-2">"The best way to find yourself is to lose yourself in the service of others.”</p>
+        </div>
+        <div  class=" col d-none d-md-block col-md-6 thumb" >
+            <img src="{% static 'images/hero-img.jpg' %}" alt="Bar" >
+        </div>   
+        
+       
+    </div>
+
+    <div class="d-block d-md-flex justify-content-evenly pt-5 pb-5">
+        <div class="text-center mb-5">
+            <div class="d-md-block col-md-6 mb-3">
+                <img src="{% static 'images/meet.jpg' %}" class="line" alt="Meet" width="410" height="600" >
+            </div>
+            <a href="{% url 'food_menu' %}" class="food-link "> Food Menu</a> 
+        </div>
+
+        <div class="text-center">
+            <div class="d-md-block col-md-6 mb-3">
+                <img src="{% static 'images/coctail.jpg' %}"  class="line" alt="Coctail" width="410" height="600" >
+            </div>
+            <a href="{% url 'drink_menu' %}" class="drink-link" > Drinks Menu</a>
+        </div>
+    </div>
+
     
 </div>
-
-<!-- index.html content ends here -->
 {% endblock %}

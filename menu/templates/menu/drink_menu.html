@@ -7,6 +7,24 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col-12 mt-3 w-50 mx-auto">
+            <h2 class="heading text-center">New!</h2>
+            {% for drink in drink_list %}
+            {% if drink.drink_type == 3 and drink.available == 1 %}
+            <div class="d-block d-md-flex justify-content-between">
+                <div>
+                    <h3 class="light">{{ drink.drink_name}}</h3>
+                    <p class="text-muted">{{ drink.description}}</p>
+                </div>
+                
+                <p class="light">{{ drink.price}} <span class="light">€</span></p>
+            </div>
+             
+            {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12 mt-3 w-50 mx-auto">
             <h2 class="heading text-center">Coctails</h2>
             {% for drink in drink_list %}
             {% if drink.drink_type == 2 and drink.available == 1 %}
