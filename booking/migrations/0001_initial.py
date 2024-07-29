@@ -29,7 +29,7 @@ class Migration(migrations.Migration):
                 ('date', models.DateField()),
                 ('time', models.TimeField()),
                 ('guests', models.PositiveIntegerField()),
-                ('table', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='bookings.table')),
+                ('table', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='booking.table')),
                 ('user', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL)),
             ],
             options={

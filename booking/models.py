@@ -18,7 +18,6 @@ class Table(models.Model):
 
 
 
-
 class Reservation(models.Model):
     """
     a class for the Reservation model

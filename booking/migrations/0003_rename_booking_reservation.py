@@ -8,7 +8,7 @@ class Migration(migrations.Migration):
 
     dependencies = [
         migrations.swappable_dependency(settings.AUTH_USER_MODEL),
-        ('bookings', '0002_alter_booking_time'),
+        ('booking', '0002_alter_booking_time'),
     ]
 
     operations = [

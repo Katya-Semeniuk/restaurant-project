@@ -18,7 +18,7 @@ from django.contrib import admin
 from django.urls import path, include
 
 from about.views import about_me
-from bookings.views import bookings
+from booking.views import booking
 
 
 
@@ -28,7 +28,7 @@ urlpatterns = [
     path("about/", include("about.urls"), name="about-urls"),
     path("accounts/", include("allauth.urls")),
     path('admin/', admin.site.urls),
-    path('bookings/', bookings, name='bookings'),
+    path('booking/', include("booking.urls"), name='booking'),
     path("", include("menu.urls"), name="menu")
     
     

@@ -3,6 +3,7 @@
 {% url 'home' as home_url %}
 {% url 'about' as about_url %}
 {% url 'menu' as menu_url %}
+{% url 'booking' as booking_url %}
 {% url 'account_login' as login_url %}
 {% url 'account_signup' as signup_url %}
 {% url 'account_logout' as logout_url %}
@@ -65,8 +66,16 @@
                           <li><a class="dropdown-item"  href="{% url 'drink_menu' %}">Drink</a></li>
                         </ul>
                       </li>
+                      <li class="nav-item">
+                        <a class="nav-link {% if request.path == booking_url %}active{% endif %}" aria-current="page"
+                            href="{% url 'booking'%}">Book</a>
+                    </li>
                     
                 </ul>
+                {% if user.is_authenticated %}
+        <p class="text-end m-3 text-white">You are logged in as <span class="accent-secondary">{{user}}</span></p>
+        
+        {% endif %}
                 <ul class="d-flex">
                     {% if user.is_authenticated %}
                   <li class="nav-item">
@@ -83,10 +92,6 @@
                 </li>
                 {% endif %}
                 </ul>
-                
-
-                
-                
             </div>
         </div>
     </nav>
@@ -107,11 +112,6 @@
   </div>
 
     <main class="flex-shrink-0 main-bg">
-        {% if user.is_authenticated %}
-        <p class="text-end m-3">You are logged in as {{user}}</p>
-        {% else%}
-        <p class="text-end m-3">You are not logged in</p>
-        {% endif %}
 
         {% block content %}
         <!-- Content Goes here -->

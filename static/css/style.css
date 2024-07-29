@@ -8,6 +8,17 @@ ul{
     list-style: none;
 }
 
+.accent-primary{
+    color: #ffc107;  
+}
+.accent-secondary{
+ color: #DCCA87;    
+}
+
+.errorlist{
+    color: red;
+    margin-bottom: 10px;
+}
 
 /* header */
 .brand {
@@ -139,7 +150,6 @@ text-decoration-line: none;
 
                     /* about page */
 
-
 .founder{
     margin-top: 25px;
     margin-bottom: 5px;
@@ -157,8 +167,8 @@ color: #F5F4FA;
 
 /* sign in page */
 
-.container-login, 
-.container-logout{
+.container-login{
+    padding-top: 35px;
     color: #F5F4FA;
 }
 
@@ -187,9 +197,45 @@ color: #F5F4FA;
 
 /* log out page */
 
-.logout-title{
-    color:  #DCCA87; 
+.container-logout{
+    color: #F5F4FA;
 }
+
+
+
+/* sign up page */
+.signup-container{
+    padding-top: 35px;
+    color: #F5F4FA;
+}
+
+.signup-container  li{
+    color: #DCCA87;   
+}
+
+.signup-title{
+    color: #cccad4;
+    text-align: center;
+    margin-bottom: 15px;
+}
+.signup-title::after{
+    content: '';
+    display: block;
+    background-image: radial-gradient(circle, rgba(255,239,22,1) 0%, rgba(17,17,16,1) 100%);
+    margin-top: 4px;
+    width: 100%;
+    height: 1px;
+    background-color: #ffc107 ;
+}
+
+.link-login{
+    color: #DCCA87;   
+}
+
+.link-login:hover{
+    color: #ffc107 ;
+}
+
 
 .dark-bg {
     background-color:#343a40;
