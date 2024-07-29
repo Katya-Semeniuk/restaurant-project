@@ -237,6 +237,20 @@ color: #F5F4FA;
 }
 
 
+
+/* booking page */
+
+.wrap{
+    padding-top: 10%;
+    background-color: #242424;
+    height: 600px;
+    background-image:
+    linear-gradient(to right, rgba(47, 48, 58, 0.7),
+    rgba(47, 48, 58, 0.7)),
+    url(../images/main-bcg.jpg);
+}
+
+
 .dark-bg {
     background-color:#343a40;
     

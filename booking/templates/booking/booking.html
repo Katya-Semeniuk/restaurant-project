@@ -1,17 +1,20 @@
 {% extends "base.html" %}
 {% load static %}
+
 {% block content %}
 
 
-<div class="container-fluid">
-    <div class="row p-5 align-items-center">
+<div class=" wrap">
+    <div class="text-center row">
         <div class="col">
-            <p class="text fs-2">{{ about.title}}</p>
-            <p class="text-white text-center fs-2">{{ about.content}}</p> 
+            {% if not user.is_authenticated %}
+            <p class="text-white">To book a table, log in to your account</p>
+            <a class="btn btn-warning" href="{% url 'account_login' %}">Go to Login
+                    Page</a>
+            {% else %}
+            <p class=" m-3 text-white">You are logged in !</p>
+            {% endif %}
         </div>
-         
-        
-       
     </div>
     
 </div>

@@ -1,8 +1,15 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from .models import Reservation
 
 # Create your views here.
 
 
 def booking(request):
-  return HttpResponse("This is a Booking page!")
+
+  data = Reservation.objects.all()
+
+  return render(
+    request,
+    "booking/booking.html",
+    {"booking": data}
+  )
