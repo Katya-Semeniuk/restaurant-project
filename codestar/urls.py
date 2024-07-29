@@ -26,6 +26,7 @@ from bookings.views import bookings
 urlpatterns = [
     path("", include("home.urls"), name="home"),
     path("about/", include("about.urls"), name="about-urls"),
+    path("accounts/", include("allauth.urls")),
     path('admin/', admin.site.urls),
     path('bookings/', bookings, name='bookings'),
     path("", include("menu.urls"), name="menu")
