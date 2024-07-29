@@ -8,6 +8,8 @@ ul{
     list-style: none;
 }
 
+
+/* header */
 .brand {
     font-family: "Cormorant Upright", serif;
     font-size: 1.6rem;
@@ -27,15 +29,104 @@ ul{
     color: #ffc107 !important;
 }
 
+               /*home page*/
+
+/* hero */
+.hero{
+    height: 600px;
+    background-image:
+    linear-gradient(to right, rgba(47, 48, 58, 0.6),
+    rgba(47, 48, 58, 0.6)),
+    url(../images/main-bcg.jpg);
+   
+}
+
+.title{
+    padding-top: 150px;
+    font-size: 44px;
+    text-align: center;
+    color: #ffc107 ;
+    
+}
+.title span{
+    color:  #F5F4FA;
+}
+/* main-section */
+.text{
+    font-family: "Cormorant Upright";
+    color: #DCCA87;
+}
+.thumb{
+    width: 45%;
+    height: 600px;
+}
+
+.thumb > img{
+    display: block;
+    height: 100%;
+    width: 100%;
+   
+    object-fit: cover; 
+}
+
+
+/* menu-section */
+.food-link,
+.drink-link{
+position: relative;
+font-family: "Cormorant Upright";
+font-size: 44px;
+font-weight: 600;
+line-height: 130%;
+letter-spacing: 1.92px;
+color: #FFF;
+color:  #cccad4;
+text-transform: capitalize;
+text-decoration-line: none;
+}
+
+.food-link:hover,
+.drink-link:hover{
+    color:  #cccad4;
+    color: #FFF;
+}
+
+.food-link::after,
+.drink-link::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -2px; 
+    width: 100%;
+    height: 1px; 
+    background-color: transparent;
+    transition: background-color 0.3s ease;
+}
+
+.food-link:hover::after,
+.drink-link:hover::after {
+    background-image: radial-gradient(circle, rgba(255,239,22,1) 0%, rgba(17,17,16,1) 100%);;
+}
+
+.line{
+    border: 1px solid #DCCA87; 
+}
+
+
+
+
+
+                    /* menu page*/
 .heading{
    color:  #DCCA87;
+   margin-bottom: 15px;
 } 
 
 .heading::after{
     content: '';
     display: block;
-    background-image: radial-gradient(circle, rgba(255,239,22,1) 0%, rgba(17,17,16,1) 100%);;
-    margin-top: 3px;
+    background-image: radial-gradient(circle, rgba(255,239,22,1) 0%, rgba(17,17,16,1) 100%);
+    margin-top: 4px;
     width: 100%;
     height: 1px;
     background-color: #ffc107 ;
@@ -45,7 +136,12 @@ ul{
 }
 
 
+                    /* about page */
 
+
+.founder{
+    color:  #DCCA87;
+}
 
 .working {
 font-family: "Open Sans";
@@ -64,8 +160,6 @@ color: #F5F4FA;
 }
 
 .main-bg {
-    /* background-color: #F9FAFC; */
-    background-color: #F5F4FA;
     background-color: #0C0B08;
 
 }

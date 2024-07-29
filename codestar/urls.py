@@ -17,7 +17,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
-from about.views import about
+from about.views import about_me
 from bookings.views import bookings
 
 
@@ -25,7 +25,7 @@ from bookings.views import bookings
 
 urlpatterns = [
     path("", include("home.urls"), name="home"),
-    path('about/', about, name='about'),
+    path("about/", include("about.urls"), name="about-urls"),
     path('admin/', admin.site.urls),
     path('bookings/', bookings, name='bookings'),
     path("", include("menu.urls"), name="menu")

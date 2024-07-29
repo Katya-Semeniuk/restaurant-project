@@ -68,6 +68,8 @@ ul{
    
     object-fit: cover; 
 }
+
+
 /* menu-section */
 .food-link,
 .drink-link{
@@ -134,7 +136,14 @@ text-decoration-line: none;
 }
 
 
+                    /* about page */
 
+
+.founder{
+    margin-top: 25px;
+    margin-bottom: 5px;
+    color:  #DCCA87;
+}
 
 .working {
 font-family: "Open Sans";
