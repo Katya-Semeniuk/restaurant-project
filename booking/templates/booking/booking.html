@@ -45,13 +45,7 @@
             {% endif %}
             {% endif %}
             <!-- Display if user is not logged in -->
-            {% if not user.is_authenticated %}
-            <h3>Login Required</h3>
-            <p>Please login to book a table</p>
-            <button class="btn btn-success" type="submit"><a href="{% url 'account_login' %}">Go to Login
-                    Page</a></button>
-            {% else %}
-            {% endif %}
+            
         </div>
     </div>
     
