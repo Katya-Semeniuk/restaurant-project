@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load crispy_forms_tags %}
 {% load static %}
 
 {% block content %}
@@ -9,10 +10,47 @@
         <div class="col">
             {% if not user.is_authenticated %}
             <p class="text-white">To book a table, log in to your account</p>
-            <a class="btn btn-warning" href="{% url 'account_login' %}">Go to Login
-                    Page</a>
+            <a class="btn btn-warning" href="{% url 'account_login' %}">Go to Login Page</a>
             {% else %}
-            <p class=" m-3 text-white">You are logged in !</p>
+            <!-- Display form if user is logged in-->
+            {% if user.is_authenticated %}
+            <div class="row text-center">
+                <div class="col-12">
+                    <h5 class="fw-bold mt-3">Your Booking</h5>
+                </div>
+            </div>
+            <form method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                <!-- booking form -->
+                {{ booking_form| crispy }}
+
+                <button class="btn btn-success" type="submit">Submit</button>
+            </form>
+            {% endif %}
+            
+            <!-- Form Errors from stack overflow -->
+            {% if booking_form.errors %}
+            {% for field in booking_form %}
+            {% for error in field.errors %}
+                <div class="alert alert-danger">
+                    <strong>{{ error|escape }}</strong>
+                </div>
+            {% endfor %}
+            {% endfor %}
+            {% for error in booking_form.non_field_errors %}
+                <div class="alert alert-danger">
+                    <strong>{{ error|escape }}</strong>
+                </div>
+            {% endfor %}
+            {% endif %}
+            {% endif %}
+            <!-- Display if user is not logged in -->
+            {% if not user.is_authenticated %}
+            <h3>Login Required</h3>
+            <p>Please login to book a table</p>
+            <button class="btn btn-success" type="submit"><a href="{% url 'account_login' %}">Go to Login
+                    Page</a></button>
+            {% else %}
             {% endif %}
         </div>
     </div>
