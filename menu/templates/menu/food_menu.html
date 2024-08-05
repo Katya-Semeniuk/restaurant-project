@@ -59,9 +59,8 @@
     <div class="row">
         <div class="col-12 mt-3 w-50 mx-auto">
             <h2 class="heading text-center">Desserts</h2>
-            
             {% for food in food_list %}
-            {% if foodk.food_type == 2 and food.available == 1 %}
+            {% if food.food_type == 2 and food.available == 1 %}
             <div class="d-block d-md-flex justify-content-between">
                 <div>
                     <h3 class="light">{{ food.food_name}}</h3>
@@ -73,8 +72,8 @@
             {% endfor %}
         </div>
     </div>
-    </div>
     
+    </div>
 </div>
 
 
